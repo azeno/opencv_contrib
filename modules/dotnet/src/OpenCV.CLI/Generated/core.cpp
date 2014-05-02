@@ -10,1258 +10,6 @@
 using namespace System;
 using namespace System::Runtime::InteropServices;
 
-OpenCV::Cv::Complexf::Complexf(::cv::Complexf* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Complexf::Complexf(System::IntPtr native)
-{
-    auto __native = (::cv::Complexf*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Complexf::~Complexf()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Complexf::!Complexf()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Complexf::Complexf()
-{
-    NativePtr = new ::cv::Complexf();
-}
-
-OpenCV::Cv::Complexf::Complexf(float _re, float _im)
-{
-    NativePtr = new ::cv::Complexf(_re, _im);
-}
-
-OpenCV::Cv::Complexf^ OpenCV::Cv::Complexf::Conj()
-{
-    auto __ret = ((::cv::Complexf*)NativePtr)->conj();
-    auto ____ret = new ::cv::Complexf(__ret);
-    return gcnew OpenCV::Cv::Complexf((::cv::Complexf*)____ret);
-}
-
-bool OpenCV::Cv::Complexf::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Complexf^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Complexf::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Complexf::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Complexf::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Complexf*)object.ToPointer();
-}
-
-float OpenCV::Cv::Complexf::Re::get()
-{
-    return ((::cv::Complexf*)NativePtr)->re;
-}
-
-void OpenCV::Cv::Complexf::Re::set(float value)
-{
-    ((::cv::Complexf*)NativePtr)->re = value;
-}
-
-float OpenCV::Cv::Complexf::Im::get()
-{
-    return ((::cv::Complexf*)NativePtr)->im;
-}
-
-void OpenCV::Cv::Complexf::Im::set(float value)
-{
-    ((::cv::Complexf*)NativePtr)->im = value;
-}
-
-OpenCV::Cv::Size::Size(::cv::Size* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Size::Size(System::IntPtr native)
-{
-    auto __native = (::cv::Size*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Size::~Size()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size::!Size()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size::Size()
-{
-    NativePtr = new ::cv::Size();
-}
-
-OpenCV::Cv::Size::Size(int _width, int _height)
-{
-    NativePtr = new ::cv::Size(_width, _height);
-}
-
-int OpenCV::Cv::Size::Area()
-{
-    auto __ret = ((::cv::Size*)NativePtr)->area();
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Size::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Size::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Size^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Size::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Size::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Size::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Size*)object.ToPointer();
-}
-
-int OpenCV::Cv::Size::Width::get()
-{
-    return ((::cv::Size*)NativePtr)->width;
-}
-
-void OpenCV::Cv::Size::Width::set(int value)
-{
-    ((::cv::Size*)NativePtr)->width = value;
-}
-
-int OpenCV::Cv::Size::Height::get()
-{
-    return ((::cv::Size*)NativePtr)->height;
-}
-
-void OpenCV::Cv::Size::Height::set(int value)
-{
-    ((::cv::Size*)NativePtr)->height = value;
-}
-
-OpenCV::Cv::Size2d::Size2d(::cv::Size2d* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Size2d::Size2d(System::IntPtr native)
-{
-    auto __native = (::cv::Size2d*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Size2d::~Size2d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size2d::!Size2d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size2d::Size2d()
-{
-    NativePtr = new ::cv::Size2d();
-}
-
-OpenCV::Cv::Size2d::Size2d(double _width, double _height)
-{
-    NativePtr = new ::cv::Size2d(_width, _height);
-}
-
-double OpenCV::Cv::Size2d::Area()
-{
-    auto __ret = ((::cv::Size2d*)NativePtr)->area();
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Size2d::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Size2d::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Size2d^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Size2d::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Size2d::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Size2d::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Size2d*)object.ToPointer();
-}
-
-double OpenCV::Cv::Size2d::Width::get()
-{
-    return ((::cv::Size2d*)NativePtr)->width;
-}
-
-void OpenCV::Cv::Size2d::Width::set(double value)
-{
-    ((::cv::Size2d*)NativePtr)->width = value;
-}
-
-double OpenCV::Cv::Size2d::Height::get()
-{
-    return ((::cv::Size2d*)NativePtr)->height;
-}
-
-void OpenCV::Cv::Size2d::Height::set(double value)
-{
-    ((::cv::Size2d*)NativePtr)->height = value;
-}
-
-OpenCV::Cv::Size2f::Size2f(::cv::Size2f* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Size2f::Size2f(System::IntPtr native)
-{
-    auto __native = (::cv::Size2f*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Size2f::~Size2f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size2f::!Size2f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Size2f::Size2f()
-{
-    NativePtr = new ::cv::Size2f();
-}
-
-OpenCV::Cv::Size2f::Size2f(float _width, float _height)
-{
-    NativePtr = new ::cv::Size2f(_width, _height);
-}
-
-float OpenCV::Cv::Size2f::Area()
-{
-    auto __ret = ((::cv::Size2f*)NativePtr)->area();
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Size2f::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Size2f::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Size2f^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Size2f::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Size2f::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Size2f::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Size2f*)object.ToPointer();
-}
-
-float OpenCV::Cv::Size2f::Width::get()
-{
-    return ((::cv::Size2f*)NativePtr)->width;
-}
-
-void OpenCV::Cv::Size2f::Width::set(float value)
-{
-    ((::cv::Size2f*)NativePtr)->width = value;
-}
-
-float OpenCV::Cv::Size2f::Height::get()
-{
-    return ((::cv::Size2f*)NativePtr)->height;
-}
-
-void OpenCV::Cv::Size2f::Height::set(float value)
-{
-    ((::cv::Size2f*)NativePtr)->height = value;
-}
-
-OpenCV::Cv::Point::Point(::cv::Point* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point::Point(System::IntPtr native)
-{
-    auto __native = (::cv::Point*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point::~Point()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point::!Point()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point::Point()
-{
-    NativePtr = new ::cv::Point();
-}
-
-OpenCV::Cv::Point::Point(int _x, int _y)
-{
-    NativePtr = new ::cv::Point(_x, _y);
-}
-
-int OpenCV::Cv::Point::Dot(OpenCV::Cv::Point^ pt)
-{
-    auto &arg0 = *(::cv::Point*)pt->NativePtr;
-    auto __ret = ((::cv::Point*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point::Ddot(OpenCV::Cv::Point^ pt)
-{
-    auto &arg0 = *(::cv::Point*)pt->NativePtr;
-    auto __ret = ((::cv::Point*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point::Cross(OpenCV::Cv::Point^ pt)
-{
-    auto &arg0 = *(::cv::Point*)pt->NativePtr;
-    auto __ret = ((::cv::Point*)NativePtr)->cross(arg0);
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Point::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point*)object.ToPointer();
-}
-
-int OpenCV::Cv::Point::X::get()
-{
-    return ((::cv::Point*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point::X::set(int value)
-{
-    ((::cv::Point*)NativePtr)->x = value;
-}
-
-int OpenCV::Cv::Point::Y::get()
-{
-    return ((::cv::Point*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point::Y::set(int value)
-{
-    ((::cv::Point*)NativePtr)->y = value;
-}
-
-OpenCV::Cv::Point2d::Point2d(::cv::Point2d* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point2d::Point2d(System::IntPtr native)
-{
-    auto __native = (::cv::Point2d*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point2d::~Point2d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point2d::!Point2d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point2d::Point2d()
-{
-    NativePtr = new ::cv::Point2d();
-}
-
-OpenCV::Cv::Point2d::Point2d(double _x, double _y)
-{
-    NativePtr = new ::cv::Point2d(_x, _y);
-}
-
-double OpenCV::Cv::Point2d::Dot(OpenCV::Cv::Point2d^ pt)
-{
-    auto &arg0 = *(::cv::Point2d*)pt->NativePtr;
-    auto __ret = ((::cv::Point2d*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point2d::Ddot(OpenCV::Cv::Point2d^ pt)
-{
-    auto &arg0 = *(::cv::Point2d*)pt->NativePtr;
-    auto __ret = ((::cv::Point2d*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point2d::Cross(OpenCV::Cv::Point2d^ pt)
-{
-    auto &arg0 = *(::cv::Point2d*)pt->NativePtr;
-    auto __ret = ((::cv::Point2d*)NativePtr)->cross(arg0);
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Point2d::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point2d::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point2d^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point2d::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point2d::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point2d::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point2d*)object.ToPointer();
-}
-
-double OpenCV::Cv::Point2d::X::get()
-{
-    return ((::cv::Point2d*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point2d::X::set(double value)
-{
-    ((::cv::Point2d*)NativePtr)->x = value;
-}
-
-double OpenCV::Cv::Point2d::Y::get()
-{
-    return ((::cv::Point2d*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point2d::Y::set(double value)
-{
-    ((::cv::Point2d*)NativePtr)->y = value;
-}
-
-OpenCV::Cv::Point2f::Point2f(::cv::Point2f* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point2f::Point2f(System::IntPtr native)
-{
-    auto __native = (::cv::Point2f*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point2f::~Point2f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point2f::!Point2f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point2f::Point2f()
-{
-    NativePtr = new ::cv::Point2f();
-}
-
-OpenCV::Cv::Point2f::Point2f(float _x, float _y)
-{
-    NativePtr = new ::cv::Point2f(_x, _y);
-}
-
-float OpenCV::Cv::Point2f::Dot(OpenCV::Cv::Point2f^ pt)
-{
-    auto &arg0 = *(::cv::Point2f*)pt->NativePtr;
-    auto __ret = ((::cv::Point2f*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point2f::Ddot(OpenCV::Cv::Point2f^ pt)
-{
-    auto &arg0 = *(::cv::Point2f*)pt->NativePtr;
-    auto __ret = ((::cv::Point2f*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point2f::Cross(OpenCV::Cv::Point2f^ pt)
-{
-    auto &arg0 = *(::cv::Point2f*)pt->NativePtr;
-    auto __ret = ((::cv::Point2f*)NativePtr)->cross(arg0);
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Point2f::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point2f::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point2f^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point2f::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point2f::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point2f::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point2f*)object.ToPointer();
-}
-
-float OpenCV::Cv::Point2f::X::get()
-{
-    return ((::cv::Point2f*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point2f::X::set(float value)
-{
-    ((::cv::Point2f*)NativePtr)->x = value;
-}
-
-float OpenCV::Cv::Point2f::Y::get()
-{
-    return ((::cv::Point2f*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point2f::Y::set(float value)
-{
-    ((::cv::Point2f*)NativePtr)->y = value;
-}
-
-OpenCV::Cv::Rect::Rect(::cv::Rect* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Rect::Rect(System::IntPtr native)
-{
-    auto __native = (::cv::Rect*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Rect::~Rect()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Rect::!Rect()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Rect::Rect()
-{
-    NativePtr = new ::cv::Rect();
-}
-
-OpenCV::Cv::Rect::Rect(int _x, int _y, int _width, int _height)
-{
-    NativePtr = new ::cv::Rect(_x, _y, _width, _height);
-}
-
-int OpenCV::Cv::Rect::Area()
-{
-    auto __ret = ((::cv::Rect*)NativePtr)->area();
-    return __ret;
-}
-
-System::String^ OpenCV::Cv::Rect::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Rect::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Rect^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Rect::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Rect::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Rect::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Rect*)object.ToPointer();
-}
-
-int OpenCV::Cv::Rect::X::get()
-{
-    return ((::cv::Rect*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Rect::X::set(int value)
-{
-    ((::cv::Rect*)NativePtr)->x = value;
-}
-
-int OpenCV::Cv::Rect::Y::get()
-{
-    return ((::cv::Rect*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Rect::Y::set(int value)
-{
-    ((::cv::Rect*)NativePtr)->y = value;
-}
-
-int OpenCV::Cv::Rect::Width::get()
-{
-    return ((::cv::Rect*)NativePtr)->width;
-}
-
-void OpenCV::Cv::Rect::Width::set(int value)
-{
-    ((::cv::Rect*)NativePtr)->width = value;
-}
-
-int OpenCV::Cv::Rect::Height::get()
-{
-    return ((::cv::Rect*)NativePtr)->height;
-}
-
-void OpenCV::Cv::Rect::Height::set(int value)
-{
-    ((::cv::Rect*)NativePtr)->height = value;
-}
-
-OpenCV::Cv::Point3i::Point3i(::cv::Point3i* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point3i::Point3i(System::IntPtr native)
-{
-    auto __native = (::cv::Point3i*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point3i::~Point3i()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3i::!Point3i()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3i::Point3i()
-{
-    NativePtr = new ::cv::Point3i();
-}
-
-OpenCV::Cv::Point3i::Point3i(int _x, int _y, int _z)
-{
-    NativePtr = new ::cv::Point3i(_x, _y, _z);
-}
-
-int OpenCV::Cv::Point3i::Dot(OpenCV::Cv::Point3i^ pt)
-{
-    auto &arg0 = *(::cv::Point3i*)pt->NativePtr;
-    auto __ret = ((::cv::Point3i*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point3i::Ddot(OpenCV::Cv::Point3i^ pt)
-{
-    auto &arg0 = *(::cv::Point3i*)pt->NativePtr;
-    auto __ret = ((::cv::Point3i*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-OpenCV::Cv::Point3i^ OpenCV::Cv::Point3i::Cross(OpenCV::Cv::Point3i^ pt)
-{
-    auto &arg0 = *(::cv::Point3i*)pt->NativePtr;
-    auto __ret = ((::cv::Point3i*)NativePtr)->cross(arg0);
-    auto ____ret = new ::cv::Point3i(__ret);
-    return gcnew OpenCV::Cv::Point3i((::cv::Point3i*)____ret);
-}
-
-System::String^ OpenCV::Cv::Point3i::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point3i::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point3i^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point3i::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point3i::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point3i::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point3i*)object.ToPointer();
-}
-
-int OpenCV::Cv::Point3i::X::get()
-{
-    return ((::cv::Point3i*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point3i::X::set(int value)
-{
-    ((::cv::Point3i*)NativePtr)->x = value;
-}
-
-int OpenCV::Cv::Point3i::Y::get()
-{
-    return ((::cv::Point3i*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point3i::Y::set(int value)
-{
-    ((::cv::Point3i*)NativePtr)->y = value;
-}
-
-int OpenCV::Cv::Point3i::Z::get()
-{
-    return ((::cv::Point3i*)NativePtr)->z;
-}
-
-void OpenCV::Cv::Point3i::Z::set(int value)
-{
-    ((::cv::Point3i*)NativePtr)->z = value;
-}
-
-OpenCV::Cv::Point3f::Point3f(::cv::Point3f* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point3f::Point3f(System::IntPtr native)
-{
-    auto __native = (::cv::Point3f*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point3f::~Point3f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3f::!Point3f()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3f::Point3f()
-{
-    NativePtr = new ::cv::Point3f();
-}
-
-OpenCV::Cv::Point3f::Point3f(float _x, float _y, float _z)
-{
-    NativePtr = new ::cv::Point3f(_x, _y, _z);
-}
-
-float OpenCV::Cv::Point3f::Dot(OpenCV::Cv::Point3f^ pt)
-{
-    auto &arg0 = *(::cv::Point3f*)pt->NativePtr;
-    auto __ret = ((::cv::Point3f*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point3f::Ddot(OpenCV::Cv::Point3f^ pt)
-{
-    auto &arg0 = *(::cv::Point3f*)pt->NativePtr;
-    auto __ret = ((::cv::Point3f*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-OpenCV::Cv::Point3f^ OpenCV::Cv::Point3f::Cross(OpenCV::Cv::Point3f^ pt)
-{
-    auto &arg0 = *(::cv::Point3f*)pt->NativePtr;
-    auto __ret = ((::cv::Point3f*)NativePtr)->cross(arg0);
-    auto ____ret = new ::cv::Point3f(__ret);
-    return gcnew OpenCV::Cv::Point3f((::cv::Point3f*)____ret);
-}
-
-System::String^ OpenCV::Cv::Point3f::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point3f::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point3f^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point3f::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point3f::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point3f::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point3f*)object.ToPointer();
-}
-
-float OpenCV::Cv::Point3f::X::get()
-{
-    return ((::cv::Point3f*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point3f::X::set(float value)
-{
-    ((::cv::Point3f*)NativePtr)->x = value;
-}
-
-float OpenCV::Cv::Point3f::Y::get()
-{
-    return ((::cv::Point3f*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point3f::Y::set(float value)
-{
-    ((::cv::Point3f*)NativePtr)->y = value;
-}
-
-float OpenCV::Cv::Point3f::Z::get()
-{
-    return ((::cv::Point3f*)NativePtr)->z;
-}
-
-void OpenCV::Cv::Point3f::Z::set(float value)
-{
-    ((::cv::Point3f*)NativePtr)->z = value;
-}
-
-OpenCV::Cv::Point3d::Point3d(::cv::Point3d* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Point3d::Point3d(System::IntPtr native)
-{
-    auto __native = (::cv::Point3d*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Point3d::~Point3d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3d::!Point3d()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Point3d::Point3d()
-{
-    NativePtr = new ::cv::Point3d();
-}
-
-OpenCV::Cv::Point3d::Point3d(double _x, double _y, double _z)
-{
-    NativePtr = new ::cv::Point3d(_x, _y, _z);
-}
-
-double OpenCV::Cv::Point3d::Dot(OpenCV::Cv::Point3d^ pt)
-{
-    auto &arg0 = *(::cv::Point3d*)pt->NativePtr;
-    auto __ret = ((::cv::Point3d*)NativePtr)->dot(arg0);
-    return __ret;
-}
-
-double OpenCV::Cv::Point3d::Ddot(OpenCV::Cv::Point3d^ pt)
-{
-    auto &arg0 = *(::cv::Point3d*)pt->NativePtr;
-    auto __ret = ((::cv::Point3d*)NativePtr)->ddot(arg0);
-    return __ret;
-}
-
-OpenCV::Cv::Point3d^ OpenCV::Cv::Point3d::Cross(OpenCV::Cv::Point3d^ pt)
-{
-    auto &arg0 = *(::cv::Point3d*)pt->NativePtr;
-    auto __ret = ((::cv::Point3d*)NativePtr)->cross(arg0);
-    auto ____ret = new ::cv::Point3d(__ret);
-    return gcnew OpenCV::Cv::Point3d((::cv::Point3d*)____ret);
-}
-
-System::String^ OpenCV::Cv::Point3d::ToString()
-{
-    std::ostringstream os;
-    os << *NativePtr;
-    return clix::marshalString<clix::E_UTF8>(os.str());
-}
-
-bool OpenCV::Cv::Point3d::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Point3d^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Point3d::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Point3d::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Point3d::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Point3d*)object.ToPointer();
-}
-
-double OpenCV::Cv::Point3d::X::get()
-{
-    return ((::cv::Point3d*)NativePtr)->x;
-}
-
-void OpenCV::Cv::Point3d::X::set(double value)
-{
-    ((::cv::Point3d*)NativePtr)->x = value;
-}
-
-double OpenCV::Cv::Point3d::Y::get()
-{
-    return ((::cv::Point3d*)NativePtr)->y;
-}
-
-void OpenCV::Cv::Point3d::Y::set(double value)
-{
-    ((::cv::Point3d*)NativePtr)->y = value;
-}
-
-double OpenCV::Cv::Point3d::Z::get()
-{
-    return ((::cv::Point3d*)NativePtr)->z;
-}
-
-void OpenCV::Cv::Point3d::Z::set(double value)
-{
-    ((::cv::Point3d*)NativePtr)->z = value;
-}
-
-OpenCV::Cv::Scalar::Scalar(::cv::Scalar* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Scalar::Scalar(System::IntPtr native)
-{
-    auto __native = (::cv::Scalar*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Scalar::~Scalar()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Scalar::!Scalar()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Scalar::Scalar()
-{
-    NativePtr = new ::cv::Scalar();
-}
-
-OpenCV::Cv::Scalar::Scalar(double v0, double v1, double v2, double v3)
-{
-    NativePtr = new ::cv::Scalar(v0, v1, v2, v3);
-}
-
-OpenCV::Cv::Scalar::Scalar(double v0)
-{
-    NativePtr = new ::cv::Scalar(v0);
-}
-
-bool OpenCV::Cv::Scalar::IsReal()
-{
-    auto __ret = ((::cv::Scalar*)NativePtr)->isReal();
-    return __ret;
-}
-
-bool OpenCV::Cv::Scalar::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Scalar^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Scalar::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Scalar::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Scalar::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Scalar*)object.ToPointer();
-}
-OpenCV::Cv::Complexd::Complexd(::cv::Complexd* native)
-{
-    NativePtr = native;
-}
-
-OpenCV::Cv::Complexd::Complexd(System::IntPtr native)
-{
-    auto __native = (::cv::Complexd*)native.ToPointer();
-    NativePtr = __native;
-}
-
-OpenCV::Cv::Complexd::~Complexd()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Complexd::!Complexd()
-{
-    delete NativePtr;
-}
-
-OpenCV::Cv::Complexd::Complexd()
-{
-    NativePtr = new ::cv::Complexd();
-}
-
-OpenCV::Cv::Complexd::Complexd(double _re, double _im)
-{
-    NativePtr = new ::cv::Complexd(_re, _im);
-}
-
-OpenCV::Cv::Complexd^ OpenCV::Cv::Complexd::Conj()
-{
-    auto __ret = ((::cv::Complexd*)NativePtr)->conj();
-    auto ____ret = new ::cv::Complexd(__ret);
-    return gcnew OpenCV::Cv::Complexd((::cv::Complexd*)____ret);
-}
-
-bool OpenCV::Cv::Complexd::Equals(System::Object^ object)
-{
-    if (!object) return false;
-    auto obj = dynamic_cast<Complexd^>(object);
-
-    if (!obj) return false;
-    return __Instance == obj->__Instance;
-}
-
-int OpenCV::Cv::Complexd::GetHashCode()
-{
-    return (int)NativePtr;
-}
-
-System::IntPtr OpenCV::Cv::Complexd::__Instance::get()
-{
-    return System::IntPtr(NativePtr);
-}
-
-void OpenCV::Cv::Complexd::__Instance::set(System::IntPtr object)
-{
-    NativePtr = (::cv::Complexd*)object.ToPointer();
-}
-
-double OpenCV::Cv::Complexd::Re::get()
-{
-    return ((::cv::Complexd*)NativePtr)->re;
-}
-
-void OpenCV::Cv::Complexd::Re::set(double value)
-{
-    ((::cv::Complexd*)NativePtr)->re = value;
-}
-
-double OpenCV::Cv::Complexd::Im::get()
-{
-    return ((::cv::Complexd*)NativePtr)->im;
-}
-
-void OpenCV::Cv::Complexd::Im::set(double value)
-{
-    ((::cv::Complexd*)NativePtr)->im = value;
-}
-
 OpenCV::Cv::Matx_AddOp::Matx_AddOp(::cv::Matx_AddOp* native)
 {
     NativePtr = native;
@@ -1582,20 +330,6 @@ OpenCV::Cv::RotatedRect::RotatedRect()
     NativePtr = new ::cv::RotatedRect();
 }
 
-OpenCV::Cv::RotatedRect::RotatedRect(OpenCV::Cv::Point2f^ center, OpenCV::Cv::Size2f^ size, float angle)
-{
-    auto &arg0 = *(::cv::Point2f*)center->NativePtr;
-    auto &arg1 = *(::cv::Size2f*)size->NativePtr;
-    NativePtr = new ::cv::RotatedRect(arg0, arg1, angle);
-}
-
-OpenCV::Cv::Rect^ OpenCV::Cv::RotatedRect::BoundingRect()
-{
-    auto __ret = ((::cv::RotatedRect*)NativePtr)->boundingRect();
-    auto ____ret = new ::cv::Rect(__ret);
-    return gcnew OpenCV::Cv::Rect((::cv::Rect*)____ret);
-}
-
 bool OpenCV::Cv::RotatedRect::Equals(System::Object^ object)
 {
     if (!object) return false;
@@ -1618,26 +352,6 @@ System::IntPtr OpenCV::Cv::RotatedRect::__Instance::get()
 void OpenCV::Cv::RotatedRect::__Instance::set(System::IntPtr object)
 {
     NativePtr = (::cv::RotatedRect*)object.ToPointer();
-}
-
-OpenCV::Cv::Point2f^ OpenCV::Cv::RotatedRect::Center::get()
-{
-    return (&((::cv::RotatedRect*)NativePtr)->center == nullptr) ? nullptr : gcnew OpenCV::Cv::Point2f((::cv::Point2f*)&((::cv::RotatedRect*)NativePtr)->center);
-}
-
-void OpenCV::Cv::RotatedRect::Center::set(OpenCV::Cv::Point2f^ value)
-{
-    ((::cv::RotatedRect*)NativePtr)->center = *(::cv::Point2f*)value->NativePtr;
-}
-
-OpenCV::Cv::Size2f^ OpenCV::Cv::RotatedRect::Size::get()
-{
-    return (&((::cv::RotatedRect*)NativePtr)->size == nullptr) ? nullptr : gcnew OpenCV::Cv::Size2f((::cv::Size2f*)&((::cv::RotatedRect*)NativePtr)->size);
-}
-
-void OpenCV::Cv::RotatedRect::Size::set(OpenCV::Cv::Size2f^ value)
-{
-    ((::cv::RotatedRect*)NativePtr)->size = *(::cv::Size2f*)value->NativePtr;
 }
 
 float OpenCV::Cv::RotatedRect::Angle::get()
@@ -1850,12 +564,6 @@ OpenCV::Cv::_InputArray::_InputArray(System::Collections::Generic::List<OpenCV::
     NativePtr = new ::cv::_InputArray(arg0);
 }
 
-OpenCV::Cv::_InputArray::_InputArray(OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    NativePtr = new ::cv::_InputArray(arg0);
-}
-
 OpenCV::Cv::_InputArray::_InputArray(double* val)
 {
     auto arg0 = (const double&)val;
@@ -1885,13 +593,6 @@ int OpenCV::Cv::_InputArray::Kind()
 {
     auto __ret = ((::cv::_InputArray*)NativePtr)->kind();
     return __ret;
-}
-
-OpenCV::Cv::Size^ OpenCV::Cv::_InputArray::Size(int i)
-{
-    auto __ret = ((::cv::_InputArray*)NativePtr)->size(i);
-    auto ____ret = new ::cv::Size(__ret);
-    return gcnew OpenCV::Cv::Size((::cv::Size*)____ret);
 }
 
 unsigned int OpenCV::Cv::_InputArray::Total(int i)
@@ -1968,16 +669,6 @@ void OpenCV::Cv::_InputArray::Obj::set(void* value)
     ((::cv::_InputArray*)NativePtr)->obj = (void*)value;
 }
 
-OpenCV::Cv::Size^ OpenCV::Cv::_InputArray::Sz::get()
-{
-    return (&((::cv::_InputArray*)NativePtr)->sz == nullptr) ? nullptr : gcnew OpenCV::Cv::Size((::cv::Size*)&((::cv::_InputArray*)NativePtr)->sz);
-}
-
-void OpenCV::Cv::_InputArray::Sz::set(OpenCV::Cv::Size^ value)
-{
-    ((::cv::_InputArray*)NativePtr)->sz = *(::cv::Size*)value->NativePtr;
-}
-
 OpenCV::Cv::_OutputArray::_OutputArray(::cv::_OutputArray* native)
     : OpenCV::Cv::_InputArray((::cv::_InputArray*)native)
 {
@@ -2045,12 +736,6 @@ OpenCV::Cv::Mat^ OpenCV::Cv::_OutputArray::GetMatRef(int i)
 {
     auto &__ret = ((::cv::_OutputArray*)NativePtr)->getMatRef(i);
     return (&__ret == nullptr) ? nullptr : gcnew OpenCV::Cv::Mat((::cv::Mat*)&__ret);
-}
-
-void OpenCV::Cv::_OutputArray::Create(OpenCV::Cv::Size^ sz, int type, int i, bool allowTransposed, int fixedDepthMask)
-{
-    auto arg0 = *(::cv::Size*)sz->NativePtr;
-    ((::cv::_OutputArray*)NativePtr)->create(arg0, type, i, allowTransposed, fixedDepthMask);
 }
 
 void OpenCV::Cv::_OutputArray::Create(int rows, int cols, int type, int i, bool allowTransposed, int fixedDepthMask)
@@ -2322,49 +1007,16 @@ OpenCV::Cv::Mat::Mat(int rows, int cols, int type)
     NativePtr = new ::cv::Mat(rows, cols, type);
 }
 
-OpenCV::Cv::Mat::Mat(OpenCV::Cv::Size^ size, int type)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    NativePtr = new ::cv::Mat(arg0, type);
-}
-
-OpenCV::Cv::Mat::Mat(int rows, int cols, int type, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg3 = *(::cv::Scalar*)s->NativePtr;
-    NativePtr = new ::cv::Mat(rows, cols, type, arg3);
-}
-
-OpenCV::Cv::Mat::Mat(OpenCV::Cv::Size^ size, int type, OpenCV::Cv::Scalar^ s)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    auto &arg2 = *(::cv::Scalar*)s->NativePtr;
-    NativePtr = new ::cv::Mat(arg0, type, arg2);
-}
-
 OpenCV::Cv::Mat::Mat(int ndims, int* sizes, int type)
 {
     auto arg1 = (const int*)sizes;
     NativePtr = new ::cv::Mat(ndims, arg1, type);
 }
 
-OpenCV::Cv::Mat::Mat(int ndims, int* sizes, int type, OpenCV::Cv::Scalar^ s)
-{
-    auto arg1 = (const int*)sizes;
-    auto &arg3 = *(::cv::Scalar*)s->NativePtr;
-    NativePtr = new ::cv::Mat(ndims, arg1, type, arg3);
-}
-
 OpenCV::Cv::Mat::Mat(int rows, int cols, int type, void* data, unsigned int step)
 {
     auto arg3 = (void*)data;
     NativePtr = new ::cv::Mat(rows, cols, type, arg3, step);
-}
-
-OpenCV::Cv::Mat::Mat(OpenCV::Cv::Size^ size, int type, void* data, unsigned int step)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    auto arg2 = (void*)data;
-    NativePtr = new ::cv::Mat(arg0, type, arg2, step);
 }
 
 OpenCV::Cv::Mat::Mat(int ndims, int* sizes, int type, void* data, unsigned int* steps)
@@ -2381,13 +1033,6 @@ OpenCV::Cv::Mat::Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Range^ rowRange, OpenCV::Cv
     auto &arg1 = *(::cv::Range*)rowRange->NativePtr;
     auto &arg2 = *(::cv::Range*)colRange->NativePtr;
     NativePtr = new ::cv::Mat(arg0, arg1, arg2);
-}
-
-OpenCV::Cv::Mat::Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Rect^ roi)
-{
-    auto &arg0 = *(::cv::Mat*)m->NativePtr;
-    auto &arg1 = *(::cv::Rect*)roi->NativePtr;
-    NativePtr = new ::cv::Mat(arg0, arg1);
 }
 
 OpenCV::Cv::Mat::Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Range^ ranges)
@@ -2555,25 +1200,9 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Zeros(int rows, int cols, int type)
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Zeros(OpenCV::Cv::Size^ size, int type)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    auto __ret = ::cv::Mat::zeros(arg0, type);
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
 OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Ones(int rows, int cols, int type)
 {
     auto __ret = ::cv::Mat::ones(rows, cols, type);
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Ones(OpenCV::Cv::Size^ size, int type)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    auto __ret = ::cv::Mat::ones(arg0, type);
     auto ____ret = new ::cv::MatExpr(__ret);
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
@@ -2585,23 +1214,9 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Eye(int rows, int cols, int type)
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::Eye(OpenCV::Cv::Size^ size, int type)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    auto __ret = ::cv::Mat::eye(arg0, type);
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
 void OpenCV::Cv::Mat::Create(int rows, int cols, int type)
 {
     ((::cv::Mat*)NativePtr)->create(rows, cols, type);
-}
-
-void OpenCV::Cv::Mat::Create(OpenCV::Cv::Size^ size, int type)
-{
-    auto arg0 = *(::cv::Size*)size->NativePtr;
-    ((::cv::Mat*)NativePtr)->create(arg0, type);
 }
 
 void OpenCV::Cv::Mat::Create(int ndims, int* sizes, int type)
@@ -2641,12 +1256,6 @@ void OpenCV::Cv::Mat::Resize(unsigned int sz)
     ((::cv::Mat*)NativePtr)->resize(sz);
 }
 
-void OpenCV::Cv::Mat::Resize(unsigned int sz, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    ((::cv::Mat*)NativePtr)->resize(sz, arg1);
-}
-
 void OpenCV::Cv::Mat::Push_back_(void* elem)
 {
     auto arg0 = (const void*)elem;
@@ -2662,13 +1271,6 @@ void OpenCV::Cv::Mat::Push_back(OpenCV::Cv::Mat^ m)
 void OpenCV::Cv::Mat::Pop_back(unsigned int nelems)
 {
     ((::cv::Mat*)NativePtr)->pop_back(nelems);
-}
-
-void OpenCV::Cv::Mat::LocateROI(OpenCV::Cv::Size^ wholeSize, OpenCV::Cv::Point^ ofs)
-{
-    auto &arg0 = *(::cv::Size*)wholeSize->NativePtr;
-    auto &arg1 = *(::cv::Point*)ofs->NativePtr;
-    ((::cv::Mat*)NativePtr)->locateROI(arg0, arg1);
 }
 
 OpenCV::Cv::Mat^ OpenCV::Cv::Mat::AdjustROI(int dtop, int dbottom, int dleft, int dright)
@@ -2752,24 +1354,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator+(OpenCV::Cv::Mat^ a, OpenCV::Cv::
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator+(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Mat*)a->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 + arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator+(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::Mat*)a->NativePtr;
-    auto __ret = arg0 + arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
 OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator+(OpenCV::Cv::Mat^ m, OpenCV::Cv::MatExpr^ e)
 {
     auto &arg0 = *(::cv::Mat*)m->NativePtr;
@@ -2783,24 +1367,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator-(OpenCV::Cv::Mat^ a, OpenCV::Cv::
 {
     auto &arg0 = *(::cv::Mat*)a->NativePtr;
     auto &arg1 = *(::cv::Mat*)b->NativePtr;
-    auto __ret = arg0 - arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator-(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Mat*)a->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 - arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator-(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::Mat*)a->NativePtr;
     auto __ret = arg0 - arg1;
     auto ____ret = new ::cv::MatExpr(__ret);
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
@@ -2900,24 +1466,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator&(OpenCV::Cv::Mat^ a, OpenCV::Cv::
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator&(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Mat*)a->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 & arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator&(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::Mat*)a->NativePtr;
-    auto __ret = arg0 & arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
 OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator|(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b)
 {
     auto &arg0 = *(::cv::Mat*)a->NativePtr;
@@ -2927,46 +1475,10 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator|(OpenCV::Cv::Mat^ a, OpenCV::Cv::
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator|(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Mat*)a->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 | arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator|(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::Mat*)a->NativePtr;
-    auto __ret = arg0 | arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
 OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator^(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b)
 {
     auto &arg0 = *(::cv::Mat*)a->NativePtr;
     auto &arg1 = *(::cv::Mat*)b->NativePtr;
-    auto __ret = arg0 ^ arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator^(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::Mat*)a->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 ^ arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::Mat::operator^(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::Mat*)a->NativePtr;
     auto __ret = arg0 ^ arg1;
     auto ____ret = new ::cv::MatExpr(__ret);
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
@@ -3414,75 +1926,6 @@ _Tp OpenCV::Cv::Mat::At(int* idx)
         return (_Tp)__ret;
     }
     auto arg0 = (const int*)idx;
-    auto &__ret = ((::cv::Mat*)NativePtr)->at<gcroot<System::Object^>>(arg0);
-    return (_Tp)(System::Object^)__ret;
-}
-
-
-generic<typename _Tp>
-_Tp OpenCV::Cv::Mat::At(OpenCV::Cv::Point^ pt)
-{
-    if (_Tp::typeid == bool::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<bool>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == unsigned char::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<unsigned char>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == short::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<short>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == unsigned short::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<unsigned short>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == int::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<int>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == unsigned int::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<unsigned int>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == long long::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<long long>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == unsigned long long::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<unsigned long long>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == float::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<float>(arg0);
-        return (_Tp)__ret;
-    }
-    if (_Tp::typeid == double::typeid)
-    {
-        auto arg0 = *(::cv::Point*)pt->NativePtr;
-        auto &__ret = ((::cv::Mat*)NativePtr)->at<double>(arg0);
-        return (_Tp)__ret;
-    }
-    auto arg0 = *(::cv::Point*)pt->NativePtr;
     auto &__ret = ((::cv::Mat*)NativePtr)->at<gcroot<System::Object^>>(arg0);
     return (_Tp)(System::Object^)__ret;
 }
@@ -4084,26 +2527,11 @@ OpenCV::Cv::LineIterator::!LineIterator()
     delete NativePtr;
 }
 
-OpenCV::Cv::LineIterator::LineIterator(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, int connectivity, bool leftToRight)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Point*)pt1->NativePtr;
-    auto arg2 = *(::cv::Point*)pt2->NativePtr;
-    NativePtr = new ::cv::LineIterator(arg0, arg1, arg2, connectivity, leftToRight);
-}
-
 OpenCV::Cv::LineIterator^ OpenCV::Cv::LineIterator::operator++(OpenCV::Cv::LineIterator^ __op)
 {
     auto &arg0 = *(::cv::LineIterator*)__op->NativePtr;
     auto &__ret = ++ arg0;
     return (&__ret == nullptr) ? nullptr : gcnew OpenCV::Cv::LineIterator((::cv::LineIterator*)&__ret);
-}
-
-OpenCV::Cv::Point^ OpenCV::Cv::LineIterator::Pos()
-{
-    auto __ret = ((::cv::LineIterator*)NativePtr)->pos();
-    auto ____ret = new ::cv::Point(__ret);
-    return gcnew OpenCV::Cv::Point((::cv::Point*)____ret);
 }
 
 bool OpenCV::Cv::LineIterator::Equals(System::Object^ object)
@@ -4248,13 +2676,6 @@ OpenCV::Cv::MatConstIterator::MatConstIterator(OpenCV::Cv::Mat^ _m, int _row, in
     NativePtr = new ::cv::MatConstIterator(arg0, _row, _col);
 }
 
-OpenCV::Cv::MatConstIterator::MatConstIterator(OpenCV::Cv::Mat^ _m, OpenCV::Cv::Point^ _pt)
-{
-    auto arg0 = (::cv::Mat*)_m->NativePtr;
-    auto arg1 = *(::cv::Point*)_pt->NativePtr;
-    NativePtr = new ::cv::MatConstIterator(arg0, arg1);
-}
-
 OpenCV::Cv::MatConstIterator^ OpenCV::Cv::MatConstIterator::operator--(OpenCV::Cv::MatConstIterator^ __op)
 {
     auto &arg0 = *(::cv::MatConstIterator*)__op->NativePtr;
@@ -4267,13 +2688,6 @@ OpenCV::Cv::MatConstIterator^ OpenCV::Cv::MatConstIterator::operator++(OpenCV::C
     auto &arg0 = *(::cv::MatConstIterator*)__op->NativePtr;
     auto &__ret = ++ arg0;
     return (&__ret == nullptr) ? nullptr : gcnew OpenCV::Cv::MatConstIterator((::cv::MatConstIterator*)&__ret);
-}
-
-OpenCV::Cv::Point^ OpenCV::Cv::MatConstIterator::Pos()
-{
-    auto __ret = ((::cv::MatConstIterator*)NativePtr)->pos();
-    auto ____ret = new ::cv::Point(__ret);
-    return gcnew OpenCV::Cv::Point((::cv::Point*)____ret);
 }
 
 void OpenCV::Cv::MatConstIterator::Pos(int* _idx)
@@ -7472,13 +5886,6 @@ bool OpenCV::Cv::core::UseOptimized()
     return __ret;
 }
 
-void OpenCV::Cv::core::ScalarToRawData(OpenCV::Cv::Scalar^ s, void* buf, int type, int unroll_to)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto arg1 = (void*)buf;
-    ::cv::scalarToRawData(arg0, arg1, type, unroll_to);
-}
-
 OpenCV::Cv::_OutputArray^ OpenCV::Cv::core::NoArray()
 {
     auto __ret = ::cv::noArray();
@@ -7604,17 +6011,6 @@ void OpenCV::Cv::core::LUT(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_InputArray
 }
 
 /// <summary>
-/// computes sum of array elements
-/// </summary>
-OpenCV::Cv::Scalar^ OpenCV::Cv::core::Sum(OpenCV::Cv::_InputArray^ src)
-{
-    auto arg0 = *(::cv::_InputArray*)src->NativePtr;
-    auto __ret = ::cv::sum(arg0);
-    auto ____ret = new ::cv::Scalar(__ret);
-    return gcnew OpenCV::Cv::Scalar((::cv::Scalar*)____ret);
-}
-
-/// <summary>
 /// computes the number of nonzero array elements
 /// </summary>
 int OpenCV::Cv::core::CountNonZero(OpenCV::Cv::_InputArray^ src)
@@ -7632,18 +6028,6 @@ void OpenCV::Cv::core::FindNonZero(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_Ou
     auto arg0 = *(::cv::_InputArray*)src->NativePtr;
     auto arg1 = *(::cv::_OutputArray*)idx->NativePtr;
     ::cv::findNonZero(arg0, arg1);
-}
-
-/// <summary>
-/// computes mean value of selected array elements
-/// </summary>
-OpenCV::Cv::Scalar^ OpenCV::Cv::core::Mean(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_InputArray^ mask)
-{
-    auto arg0 = *(::cv::_InputArray*)src->NativePtr;
-    auto arg1 = *(::cv::_InputArray*)mask->NativePtr;
-    auto __ret = ::cv::mean(arg0, arg1);
-    auto ____ret = new ::cv::Scalar(__ret);
-    return gcnew OpenCV::Cv::Scalar((::cv::Scalar*)____ret);
 }
 
 /// <summary>
@@ -7706,21 +6090,6 @@ void OpenCV::Cv::core::Normalize(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_Outp
     auto arg1 = *(::cv::_OutputArray*)dst->NativePtr;
     auto arg6 = *(::cv::_InputArray*)mask->NativePtr;
     ::cv::normalize(arg0, arg1, alpha, beta, norm_type, dtype, arg6);
-}
-
-/// <summary>
-/// finds global minimum and maximum array elements and returns their values
-/// and their locations
-/// </summary>
-void OpenCV::Cv::core::MinMaxLoc(OpenCV::Cv::_InputArray^ src, double* minVal, double* maxVal, OpenCV::Cv::Point^ minLoc, OpenCV::Cv::Point^ maxLoc, OpenCV::Cv::_InputArray^ mask)
-{
-    auto arg0 = *(::cv::_InputArray*)src->NativePtr;
-    auto arg1 = (double*)minVal;
-    auto arg2 = (double*)maxVal;
-    auto arg3 = (::cv::Point*)minLoc->NativePtr;
-    auto arg4 = (::cv::Point*)maxLoc->NativePtr;
-    auto arg5 = *(::cv::_InputArray*)mask->NativePtr;
-    ::cv::minMaxLoc(arg0, arg1, arg2, arg3, arg4, arg5);
 }
 
 void OpenCV::Cv::core::MinMaxIdx(OpenCV::Cv::_InputArray^ src, double* minVal, double* maxVal, int* minIdx, int* maxIdx, OpenCV::Cv::_InputArray^ mask)
@@ -8233,17 +6602,6 @@ void OpenCV::Cv::core::magnitude(OpenCV::Cv::_InputArray^ x, OpenCV::Cv::_InputA
 }
 
 /// <summary>
-/// checks that each matrix element is within the specified range.
-/// </summary>
-bool OpenCV::Cv::core::CheckRange(OpenCV::Cv::_InputArray^ a, bool quiet, OpenCV::Cv::Point^ pos, double minVal, double maxVal)
-{
-    auto arg0 = *(::cv::_InputArray*)a->NativePtr;
-    auto arg2 = (::cv::Point*)pos->NativePtr;
-    auto __ret = ::cv::checkRange(arg0, quiet, arg2, minVal, maxVal);
-    return __ret;
-}
-
-/// <summary>
 /// converts NaN's to the given number
 /// </summary>
 void OpenCV::Cv::core::PatchNaNs(OpenCV::Cv::_OutputArray^ a, double val)
@@ -8319,16 +6677,6 @@ void OpenCV::Cv::core::CompleteSymm(OpenCV::Cv::_OutputArray^ mtx, bool lowerToU
 }
 
 /// <summary>
-/// initializes scaled identity matrix
-/// </summary>
-void OpenCV::Cv::core::SetIdentity(OpenCV::Cv::_OutputArray^ mtx, OpenCV::Cv::Scalar^ s)
-{
-    auto arg0 = *(::cv::_OutputArray*)mtx->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    ::cv::setIdentity(arg0, arg1);
-}
-
-/// <summary>
 /// computes determinant of a square matrix
 /// </summary>
 double OpenCV::Cv::core::Determinant(OpenCV::Cv::_InputArray^ mtx)
@@ -8336,17 +6684,6 @@ double OpenCV::Cv::core::Determinant(OpenCV::Cv::_InputArray^ mtx)
     auto arg0 = *(::cv::_InputArray*)mtx->NativePtr;
     auto __ret = ::cv::determinant(arg0);
     return __ret;
-}
-
-/// <summary>
-/// computes trace of a matrix
-/// </summary>
-OpenCV::Cv::Scalar^ OpenCV::Cv::core::Trace(OpenCV::Cv::_InputArray^ mtx)
-{
-    auto arg0 = *(::cv::_InputArray*)mtx->NativePtr;
-    auto __ret = ::cv::trace(arg0);
-    auto ____ret = new ::cv::Scalar(__ret);
-    return gcnew OpenCV::Cv::Scalar((::cv::Scalar*)____ret);
 }
 
 /// <summary>
@@ -8675,178 +7012,6 @@ void OpenCV::Cv::core::RandShuffle_(OpenCV::Cv::_OutputArray^ dst, double iterFa
 {
     auto arg0 = *(::cv::_OutputArray*)dst->NativePtr;
     ::cv::randShuffle_(arg0, iterFactor);
-}
-
-/// <summary>
-/// draws the line segment (pt1, pt2) in the image
-/// </summary>
-void OpenCV::Cv::core::Line(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Point*)pt1->NativePtr;
-    auto arg2 = *(::cv::Point*)pt2->NativePtr;
-    auto &arg3 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::line(arg0, arg1, arg2, arg3, thickness, lineType, shift);
-}
-
-/// <summary>
-/// draws the rectangle outline or a solid rectangle with the opposite corners
-/// pt1 and pt2 in the image
-/// </summary>
-void OpenCV::Cv::core::Rectangle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Point*)pt1->NativePtr;
-    auto arg2 = *(::cv::Point*)pt2->NativePtr;
-    auto &arg3 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::rectangle(arg0, arg1, arg2, arg3, thickness, lineType, shift);
-}
-
-/// <summary>
-/// draws the rectangle outline or a solid rectangle covering rec in the image
-/// </summary>
-void OpenCV::Cv::core::rectangle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Rect^ rec, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Rect*)rec->NativePtr;
-    auto &arg2 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::rectangle(arg0, arg1, arg2, thickness, lineType, shift);
-}
-
-/// <summary>
-/// draws the circle outline or a solid circle in the image
-/// </summary>
-void OpenCV::Cv::core::Circle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ center, int radius, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Point*)center->NativePtr;
-    auto &arg3 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::circle(arg0, arg1, radius, arg3, thickness, lineType, shift);
-}
-
-/// <summary>
-/// draws an elliptic arc, ellipse sector or a rotated ellipse in the image
-/// </summary>
-void OpenCV::Cv::core::Ellipse(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ center, OpenCV::Cv::Size^ axes, double angle, double startAngle, double endAngle, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = *(::cv::Point*)center->NativePtr;
-    auto arg2 = *(::cv::Size*)axes->NativePtr;
-    auto &arg6 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::ellipse(arg0, arg1, arg2, angle, startAngle, endAngle, arg6, thickness, lineType, shift);
-}
-
-/// <summary>
-/// draws a rotated ellipse in the image
-/// </summary>
-void OpenCV::Cv::core::ellipse(OpenCV::Cv::Mat^ img, OpenCV::Cv::RotatedRect^ box, OpenCV::Cv::Scalar^ color, int thickness, int lineType)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto &arg1 = *(::cv::RotatedRect*)box->NativePtr;
-    auto &arg2 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::ellipse(arg0, arg1, arg2, thickness, lineType);
-}
-
-/// <summary>
-/// draws a filled convex polygon in the image
-/// </summary>
-void OpenCV::Cv::core::FillConvexPoly(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pts, int npts, OpenCV::Cv::Scalar^ color, int lineType, int shift)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = (::cv::Point*)pts->NativePtr;
-    auto &arg3 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::fillConvexPoly(arg0, arg1, npts, arg3, lineType, shift);
-}
-
-void OpenCV::Cv::core::fillConvexPoly(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ points, OpenCV::Cv::Scalar^ color, int lineType, int shift)
-{
-    auto arg0 = *(::cv::_OutputArray*)img->NativePtr;
-    auto arg1 = *(::cv::_InputArray*)points->NativePtr;
-    auto &arg2 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::fillConvexPoly(arg0, arg1, arg2, lineType, shift);
-}
-
-void OpenCV::Cv::core::fillPoly(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ pts, OpenCV::Cv::Scalar^ color, int lineType, int shift, OpenCV::Cv::Point^ offset)
-{
-    auto arg0 = *(::cv::_OutputArray*)img->NativePtr;
-    auto arg1 = *(::cv::_InputArray*)pts->NativePtr;
-    auto &arg2 = *(::cv::Scalar*)color->NativePtr;
-    auto arg5 = *(::cv::Point*)offset->NativePtr;
-    ::cv::fillPoly(arg0, arg1, arg2, lineType, shift, arg5);
-}
-
-void OpenCV::Cv::core::polylines(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ pts, bool isClosed, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift)
-{
-    auto arg0 = *(::cv::_OutputArray*)img->NativePtr;
-    auto arg1 = *(::cv::_InputArray*)pts->NativePtr;
-    auto &arg3 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::polylines(arg0, arg1, isClosed, arg3, thickness, lineType, shift);
-}
-
-/// <summary>
-/// clips the line segment by the rectangle Rect(0, 0, imgSize.width,
-/// imgSize.height)
-/// </summary>
-bool OpenCV::Cv::core::ClipLine(OpenCV::Cv::Size^ imgSize, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2)
-{
-    auto arg0 = *(::cv::Size*)imgSize->NativePtr;
-    auto &arg1 = *(::cv::Point*)pt1->NativePtr;
-    auto &arg2 = *(::cv::Point*)pt2->NativePtr;
-    auto __ret = ::cv::clipLine(arg0, arg1, arg2);
-    return __ret;
-}
-
-/// <summary>
-/// clips the line segment by the rectangle imgRect
-/// </summary>
-bool OpenCV::Cv::core::clipLine(OpenCV::Cv::Rect^ imgRect, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2)
-{
-    auto arg0 = *(::cv::Rect*)imgRect->NativePtr;
-    auto &arg1 = *(::cv::Point*)pt1->NativePtr;
-    auto &arg2 = *(::cv::Point*)pt2->NativePtr;
-    auto __ret = ::cv::clipLine(arg0, arg1, arg2);
-    return __ret;
-}
-
-/// <summary>
-/// converts elliptic arc to a polygonal curve
-/// </summary>
-void OpenCV::Cv::core::Ellipse2Poly(OpenCV::Cv::Point^ center, OpenCV::Cv::Size^ axes, int angle, int arcStart, int arcEnd, int delta, System::Collections::Generic::List<OpenCV::Cv::Point^>^ pts)
-{
-    auto arg0 = *(::cv::Point*)center->NativePtr;
-    auto arg1 = *(::cv::Size*)axes->NativePtr;
-    auto _tmppts = std::vector<::cv::Point>();
-    for each(OpenCV::Cv::Point^ _element in pts)
-    {
-        auto _marshalElement = *(::cv::Point*)_element->NativePtr;
-        _tmppts.push_back(_marshalElement);
-    }
-    auto arg6 = _tmppts;
-    ::cv::ellipse2Poly(arg0, arg1, angle, arcStart, arcEnd, delta, arg6);
-}
-
-/// <summary>
-/// renders text string in the image
-/// </summary>
-void OpenCV::Cv::core::PutText(OpenCV::Cv::Mat^ img, System::String^ text, OpenCV::Cv::Point^ org, int fontFace, double fontScale, OpenCV::Cv::Scalar^ color, int thickness, int lineType, bool bottomLeftOrigin)
-{
-    auto &arg0 = *(::cv::Mat*)img->NativePtr;
-    auto arg1 = clix::marshalString<clix::E_UTF8>(text);
-    auto arg2 = *(::cv::Point*)org->NativePtr;
-    auto arg5 = *(::cv::Scalar*)color->NativePtr;
-    ::cv::putText(arg0, arg1, arg2, fontFace, fontScale, arg5, thickness, lineType, bottomLeftOrigin);
-}
-
-/// <summary>
-/// returns bounding box of the text string
-/// </summary>
-OpenCV::Cv::Size^ OpenCV::Cv::core::GetTextSize(System::String^ text, int fontFace, double fontScale, int thickness, int* baseLine)
-{
-    auto arg0 = clix::marshalString<clix::E_UTF8>(text);
-    auto arg4 = (int*)baseLine;
-    auto __ret = ::cv::getTextSize(arg0, fontFace, fontScale, thickness, arg4);
-    auto ____ret = new ::cv::Size(__ret);
-    return gcnew OpenCV::Cv::Size((::cv::Size*)____ret);
 }
 
 /// <summary>

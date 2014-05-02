@@ -21,8 +21,6 @@ namespace OpenCV
         ref class Algorithm;
         ref class AlgorithmInfo;
         ref class AlgorithmInfoData;
-        ref class Complexd;
-        ref class Complexf;
         ref class FileNode;
         ref class FileNodeIterator;
         ref class FileStorage;
@@ -49,22 +47,11 @@ namespace OpenCV
         ref class PCA;
         ref class ParallelLoopBody;
         ref class Param;
-        ref class Point2d;
-        ref class Point2f;
-        ref class Point3d;
-        ref class Point3f;
-        ref class Point3i;
-        ref class Point;
         ref class RNG;
         ref class RNG_MT19937;
         ref class Range;
-        ref class Rect;
         ref class RotatedRect;
         ref class SVD;
-        ref class Scalar;
-        ref class Size2d;
-        ref class Size2f;
-        ref class Size;
         ref class SparseMat;
         ref class SparseMatConstIterator;
         ref class SparseMatIterator;
@@ -224,716 +211,6 @@ namespace OpenCV
 
         [System::Runtime::InteropServices::UnmanagedFunctionPointer(System::Runtime::InteropServices::CallingConvention::Cdecl)] 
         public delegate void ConvertScaleData(void* from, void* to, int cn, double alpha, double beta);
-
-        public ref class Complexf : ICppInstance
-        {
-        public:
-
-            property ::cv::Complexf* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Complexf(::cv::Complexf* native);
-            Complexf(System::IntPtr native);
-            /// <summary>
-            /// constructors
-            /// </summary>
-            Complexf();
-
-            Complexf(float _re, float _im);
-
-            ~Complexf();
-
-            !Complexf();
-
-            property float Re
-            {
-                float get();
-                void set(float);
-            }
-
-            property float Im
-            {
-                float get();
-                void set(float);
-            }
-
-            /// <summary>
-            /// conjugation
-            /// </summary>
-            OpenCV::Cv::Complexf^ Conj();
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        /// <summary>
-        /// The 2D size class
-        /// </summary>
-        public ref class Size : ICppInstance
-        {
-        public:
-
-            property ::cv::Size* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Size(::cv::Size* native);
-            Size(System::IntPtr native);
-            /// <summary>
-            /// various constructors
-            /// </summary>
-            Size();
-
-            Size(int _width, int _height);
-
-            ~Size();
-
-            !Size();
-
-            property int Width
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Height
-            {
-                int get();
-                void set(int);
-            }
-
-            /// <summary>
-            /// the area (width*height)
-            /// </summary>
-            int Area();
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Size2d : ICppInstance
-        {
-        public:
-
-            property ::cv::Size2d* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Size2d(::cv::Size2d* native);
-            Size2d(System::IntPtr native);
-            /// <summary>
-            /// various constructors
-            /// </summary>
-            Size2d();
-
-            Size2d(double _width, double _height);
-
-            ~Size2d();
-
-            !Size2d();
-
-            property double Width
-            {
-                double get();
-                void set(double);
-            }
-
-            property double Height
-            {
-                double get();
-                void set(double);
-            }
-
-            /// <summary>
-            /// the area (width*height)
-            /// </summary>
-            double Area();
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        /// <summary>
-        /// The 2D size class
-        /// </summary>
-        public ref class Size2f : ICppInstance
-        {
-        public:
-
-            property ::cv::Size2f* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Size2f(::cv::Size2f* native);
-            Size2f(System::IntPtr native);
-            /// <summary>
-            /// various constructors
-            /// </summary>
-            Size2f();
-
-            Size2f(float _width, float _height);
-
-            ~Size2f();
-
-            !Size2f();
-
-            property float Width
-            {
-                float get();
-                void set(float);
-            }
-
-            property float Height
-            {
-                float get();
-                void set(float);
-            }
-
-            /// <summary>
-            /// the area (width*height)
-            /// </summary>
-            float Area();
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        /// <summary>
-        /// template 2D point class.
-        /// </summary>
-        public ref class Point : ICppInstance
-        {
-        public:
-
-            property ::cv::Point* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point(::cv::Point* native);
-            Point(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 2D Point ////////////////////////////////
-            /// </summary>
-            Point();
-
-            Point(int _x, int _y);
-
-            ~Point();
-
-            !Point();
-
-            property int X
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Y
-            {
-                int get();
-                void set(int);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            int Dot(OpenCV::Cv::Point^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point^ pt);
-
-            /// <summary>
-            /// cross-product
-            /// </summary>
-            double Cross(OpenCV::Cv::Point^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Point2d : ICppInstance
-        {
-        public:
-
-            property ::cv::Point2d* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point2d(::cv::Point2d* native);
-            Point2d(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 2D Point ////////////////////////////////
-            /// </summary>
-            Point2d();
-
-            Point2d(double _x, double _y);
-
-            ~Point2d();
-
-            !Point2d();
-
-            property double X
-            {
-                double get();
-                void set(double);
-            }
-
-            property double Y
-            {
-                double get();
-                void set(double);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            double Dot(OpenCV::Cv::Point2d^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point2d^ pt);
-
-            /// <summary>
-            /// cross-product
-            /// </summary>
-            double Cross(OpenCV::Cv::Point2d^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        /// <summary>
-        /// template 2D point class.
-        /// </summary>
-        public ref class Point2f : ICppInstance
-        {
-        public:
-
-            property ::cv::Point2f* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point2f(::cv::Point2f* native);
-            Point2f(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 2D Point ////////////////////////////////
-            /// </summary>
-            Point2f();
-
-            Point2f(float _x, float _y);
-
-            ~Point2f();
-
-            !Point2f();
-
-            property float X
-            {
-                float get();
-                void set(float);
-            }
-
-            property float Y
-            {
-                float get();
-                void set(float);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            float Dot(OpenCV::Cv::Point2f^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point2f^ pt);
-
-            /// <summary>
-            /// cross-product
-            /// </summary>
-            double Cross(OpenCV::Cv::Point2f^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Rect : ICppInstance
-        {
-        public:
-
-            property ::cv::Rect* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Rect(::cv::Rect* native);
-            Rect(System::IntPtr native);
-            /// <summary>
-            /// various constructors
-            /// </summary>
-            Rect();
-
-            Rect(int _x, int _y, int _width, int _height);
-
-            ~Rect();
-
-            !Rect();
-
-            property int X
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Y
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Width
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Height
-            {
-                int get();
-                void set(int);
-            }
-
-            /// <summary>
-            /// area (width*height) of the rectangle
-            /// </summary>
-            int Area();
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Point3i : ICppInstance
-        {
-        public:
-
-            property ::cv::Point3i* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point3i(::cv::Point3i* native);
-            Point3i(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 3D Point ////////////////////////////////
-            /// </summary>
-            Point3i();
-
-            Point3i(int _x, int _y, int _z);
-
-            ~Point3i();
-
-            !Point3i();
-
-            property int X
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Y
-            {
-                int get();
-                void set(int);
-            }
-
-            property int Z
-            {
-                int get();
-                void set(int);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            int Dot(OpenCV::Cv::Point3i^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point3i^ pt);
-
-            /// <summary>
-            /// cross product of the 2 3D points
-            /// </summary>
-            OpenCV::Cv::Point3i^ Cross(OpenCV::Cv::Point3i^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Point3f : ICppInstance
-        {
-        public:
-
-            property ::cv::Point3f* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point3f(::cv::Point3f* native);
-            Point3f(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 3D Point ////////////////////////////////
-            /// </summary>
-            Point3f();
-
-            Point3f(float _x, float _y, float _z);
-
-            ~Point3f();
-
-            !Point3f();
-
-            property float X
-            {
-                float get();
-                void set(float);
-            }
-
-            property float Y
-            {
-                float get();
-                void set(float);
-            }
-
-            property float Z
-            {
-                float get();
-                void set(float);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            float Dot(OpenCV::Cv::Point3f^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point3f^ pt);
-
-            /// <summary>
-            /// cross product of the 2 3D points
-            /// </summary>
-            OpenCV::Cv::Point3f^ Cross(OpenCV::Cv::Point3f^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Point3d : ICppInstance
-        {
-        public:
-
-            property ::cv::Point3d* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Point3d(::cv::Point3d* native);
-            Point3d(System::IntPtr native);
-            /// <summary>
-            ///////////////////////////// 3D Point ////////////////////////////////
-            /// </summary>
-            Point3d();
-
-            Point3d(double _x, double _y, double _z);
-
-            ~Point3d();
-
-            !Point3d();
-
-            property double X
-            {
-                double get();
-                void set(double);
-            }
-
-            property double Y
-            {
-                double get();
-                void set(double);
-            }
-
-            property double Z
-            {
-                double get();
-                void set(double);
-            }
-
-            /// <summary>
-            /// dot product
-            /// </summary>
-            double Dot(OpenCV::Cv::Point3d^ pt);
-
-            /// <summary>
-            /// dot product computed in double-precision arithmetics
-            /// </summary>
-            double Ddot(OpenCV::Cv::Point3d^ pt);
-
-            /// <summary>
-            /// cross product of the 2 3D points
-            /// </summary>
-            OpenCV::Cv::Point3d^ Cross(OpenCV::Cv::Point3d^ pt);
-
-            virtual System::String^ ToString() override;
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        /// <summary>
-        /// The template scalar class.
-        /// </summary>
-        public ref class Scalar : ICppInstance
-        {
-        public:
-
-            property ::cv::Scalar* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Scalar(::cv::Scalar* native);
-            Scalar(System::IntPtr native);
-            /// <summary>
-            /// various constructors
-            /// </summary>
-            Scalar();
-
-            Scalar(double v0, double v1, double v2, double v3);
-
-            Scalar(double v0);
-
-            ~Scalar();
-
-            !Scalar();
-
-            bool IsReal();
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
-
-        public ref class Complexd : ICppInstance
-        {
-        public:
-
-            property ::cv::Complexd* NativePtr;
-            property System::IntPtr __Instance
-            {
-                virtual System::IntPtr get();
-                virtual void set(System::IntPtr instance);
-            }
-
-            Complexd(::cv::Complexd* native);
-            Complexd(System::IntPtr native);
-            /// <summary>
-            /// constructors
-            /// </summary>
-            Complexd();
-
-            Complexd(double _re, double _im);
-
-            ~Complexd();
-
-            !Complexd();
-
-            property double Re
-            {
-                double get();
-                void set(double);
-            }
-
-            property double Im
-            {
-                double get();
-                void set(double);
-            }
-
-            /// <summary>
-            /// conjugation
-            /// </summary>
-            OpenCV::Cv::Complexd^ Conj();
-
-            virtual bool Equals(System::Object^ object) override;
-
-            virtual int GetHashCode() override;
-        };
 
         /// <summary>
         /// A short numerical vector.
@@ -1103,34 +380,15 @@ namespace OpenCV
             /// </summary>
             RotatedRect();
 
-            RotatedRect(OpenCV::Cv::Point2f^ center, OpenCV::Cv::Size2f^ size, float angle);
-
             ~RotatedRect();
 
             !RotatedRect();
-
-            property OpenCV::Cv::Point2f^ Center
-            {
-                OpenCV::Cv::Point2f^ get();
-                void set(OpenCV::Cv::Point2f^);
-            }
-
-            property OpenCV::Cv::Size2f^ Size
-            {
-                OpenCV::Cv::Size2f^ get();
-                void set(OpenCV::Cv::Size2f^);
-            }
 
             property float Angle
             {
                 float get();
                 void set(float);
             }
-
-            /// <summary>
-            /// returns the minimal up-right rectangle containing the rotated rectangle
-            /// </summary>
-            OpenCV::Cv::Rect^ BoundingRect();
 
             virtual bool Equals(System::Object^ object) override;
 
@@ -1244,8 +502,6 @@ namespace OpenCV
 
             _InputArray(System::Collections::Generic::List<OpenCV::Cv::Mat^>^ vec);
 
-            _InputArray(OpenCV::Cv::Scalar^ s);
-
             _InputArray(double* val);
 
             ~_InputArray();
@@ -1264,19 +520,11 @@ namespace OpenCV
                 void set(void*);
             }
 
-            property OpenCV::Cv::Size^ Sz
-            {
-                OpenCV::Cv::Size^ get();
-                void set(OpenCV::Cv::Size^);
-            }
-
             virtual OpenCV::Cv::Mat^ GetMat(int i);
 
             virtual void GetMatVector(System::Collections::Generic::List<OpenCV::Cv::Mat^>^ mv);
 
             virtual int Kind();
-
-            virtual OpenCV::Cv::Size^ Size(int i);
 
             virtual unsigned int Total(int i);
 
@@ -1319,8 +567,6 @@ namespace OpenCV
             virtual bool Needed();
 
             virtual OpenCV::Cv::Mat^ GetMatRef(int i);
-
-            virtual void Create(OpenCV::Cv::Size^ sz, int type, int i, bool allowTransposed, int fixedDepthMask);
 
             virtual void Create(int rows, int cols, int type, int i, bool allowTransposed, int fixedDepthMask);
 
@@ -1475,28 +721,15 @@ namespace OpenCV
             /// </summary>
             Mat(int rows, int cols, int type);
 
-            Mat(OpenCV::Cv::Size^ size, int type);
-
-            /// <summary>
-            /// constucts 2D matrix and fills it with the specified value _s.
-            /// </summary>
-            Mat(int rows, int cols, int type, OpenCV::Cv::Scalar^ s);
-
-            Mat(OpenCV::Cv::Size^ size, int type, OpenCV::Cv::Scalar^ s);
-
             /// <summary>
             /// constructs n-dimensional matrix
             /// </summary>
             Mat(int ndims, int* sizes, int type);
 
-            Mat(int ndims, int* sizes, int type, OpenCV::Cv::Scalar^ s);
-
             /// <summary>
             /// constructor for matrix headers pointing to user-allocated data
             /// </summary>
             Mat(int rows, int cols, int type, void* data, unsigned int step);
-
-            Mat(OpenCV::Cv::Size^ size, int type, void* data, unsigned int step);
 
             Mat(int ndims, int* sizes, int type, void* data, unsigned int* steps);
 
@@ -1504,8 +737,6 @@ namespace OpenCV
             /// creates a matrix header for a part of the bigger matrix
             /// </summary>
             Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Range^ rowRange, OpenCV::Cv::Range^ colRange);
-
-            Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Rect^ roi);
 
             Mat(OpenCV::Cv::Mat^ m, OpenCV::Cv::Range^ ranges);
 
@@ -1656,8 +887,6 @@ namespace OpenCV
             /// </summary>
             void Create(int rows, int cols, int type);
 
-            void Create(OpenCV::Cv::Size^ size, int type);
-
             void Create(int ndims, int* sizes, int type);
 
             /// <summary>
@@ -1691,12 +920,6 @@ namespace OpenCV
             void Resize(unsigned int sz);
 
             /// <summary>
-            /// resizes matrix to the specified number of hyper-planes; initializes the
-            /// newly added elements
-            /// </summary>
-            void Resize(unsigned int sz, OpenCV::Cv::Scalar^ s);
-
-            /// <summary>
             /// internal function
             /// </summary>
             void Push_back_(void* elem);
@@ -1707,11 +930,6 @@ namespace OpenCV
             /// removes several hyper-planes from bottom of the matrix
             /// </summary>
             void Pop_back(unsigned int nelems);
-
-            /// <summary>
-            /// locates matrix header within a parent matrix. See below
-            /// </summary>
-            void LocateROI(OpenCV::Cv::Size^ wholeSize, OpenCV::Cv::Point^ ofs);
 
             /// <summary>
             /// moves/resizes the current matrix ROI inside the parent matrix.
@@ -1798,29 +1016,15 @@ namespace OpenCV
             /// </summary>
             static OpenCV::Cv::MatExpr^ Zeros(int rows, int cols, int type);
 
-            static OpenCV::Cv::MatExpr^ Zeros(OpenCV::Cv::Size^ size, int type);
-
             static OpenCV::Cv::MatExpr^ Ones(int rows, int cols, int type);
-
-            static OpenCV::Cv::MatExpr^ Ones(OpenCV::Cv::Size^ size, int type);
 
             static OpenCV::Cv::MatExpr^ Eye(int rows, int cols, int type);
 
-            static OpenCV::Cv::MatExpr^ Eye(OpenCV::Cv::Size^ size, int type);
-
             static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b);
-
-            static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a);
 
             static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::Mat^ m, OpenCV::Cv::MatExpr^ e);
 
             static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b);
-
-            static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a);
 
             static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::Mat^ m, OpenCV::Cv::MatExpr^ e);
 
@@ -1844,21 +1048,9 @@ namespace OpenCV
 
             static OpenCV::Cv::MatExpr^ operator&(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b);
 
-            static OpenCV::Cv::MatExpr^ operator&(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator&(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a);
-
             static OpenCV::Cv::MatExpr^ operator|(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b);
 
-            static OpenCV::Cv::MatExpr^ operator|(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator|(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a);
-
             static OpenCV::Cv::MatExpr^ operator^(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b);
-
-            static OpenCV::Cv::MatExpr^ operator^(OpenCV::Cv::Mat^ a, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator^(OpenCV::Cv::Scalar^ s, OpenCV::Cv::Mat^ a);
 
             static OpenCV::Cv::MatExpr^ operator~(OpenCV::Cv::Mat^ m);
 
@@ -1876,9 +1068,6 @@ namespace OpenCV
 
             generic<typename _Tp>
             _Tp At(int* idx);
-
-            generic<typename _Tp>
-            _Tp At(OpenCV::Cv::Point^ pt);
         };
 
         /// <summary>
@@ -2255,11 +1444,6 @@ namespace OpenCV
 
             LineIterator(::cv::LineIterator* native);
             LineIterator(System::IntPtr native);
-            /// <summary>
-            /// intializes the iterator
-            /// </summary>
-            LineIterator(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, int connectivity, bool leftToRight);
-
             ~LineIterator();
 
             !LineIterator();
@@ -2317,11 +1501,6 @@ namespace OpenCV
             /// </summary>
             static OpenCV::Cv::LineIterator^ operator++(OpenCV::Cv::LineIterator^ __op);
 
-            /// <summary>
-            /// returns coordinates of the current pixel
-            /// </summary>
-            OpenCV::Cv::Point^ Pos();
-
             virtual bool Equals(System::Object^ object) override;
 
             virtual int GetHashCode() override;
@@ -2358,11 +1537,6 @@ namespace OpenCV
             /// </summary>
             MatConstIterator(OpenCV::Cv::Mat^ _m, int _row, int _col);
 
-            /// <summary>
-            /// constructor that sets the iterator to the specified element of the matrix
-            /// </summary>
-            MatConstIterator(OpenCV::Cv::Mat^ _m, OpenCV::Cv::Point^ _pt);
-
             ~MatConstIterator();
 
             !MatConstIterator();
@@ -2388,11 +1562,6 @@ namespace OpenCV
             /// increments the iterator
             /// </summary>
             static OpenCV::Cv::MatConstIterator^ operator++(OpenCV::Cv::MatConstIterator^ __op);
-
-            /// <summary>
-            /// returns the current iterator position
-            /// </summary>
-            OpenCV::Cv::Point^ Pos();
 
             /// <summary>
             /// returns the current iterator position
@@ -3799,7 +2968,6 @@ namespace OpenCV
             /// Returns the current optimization status
             /// </summary>
             static bool UseOptimized();
-            static void ScalarToRawData(OpenCV::Cv::Scalar^ s, void* buf, int type, int unroll_to);
             static OpenCV::Cv::_OutputArray^ NoArray();
             static unsigned int GetElemSize(int type);
             /// <summary>
@@ -3846,10 +3014,6 @@ namespace OpenCV
             /// </summary>
             static void LUT(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_InputArray^ lut, OpenCV::Cv::_OutputArray^ dst, int interpolation);
             /// <summary>
-            /// computes sum of array elements
-            /// </summary>
-            static OpenCV::Cv::Scalar^ Sum(OpenCV::Cv::_InputArray^ src);
-            /// <summary>
             /// computes the number of nonzero array elements
             /// </summary>
             static int CountNonZero(OpenCV::Cv::_InputArray^ src);
@@ -3857,10 +3021,6 @@ namespace OpenCV
             /// returns the list of locations of non-zero pixels
             /// </summary>
             static void FindNonZero(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_OutputArray^ idx);
-            /// <summary>
-            /// computes mean value of selected array elements
-            /// </summary>
-            static OpenCV::Cv::Scalar^ Mean(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_InputArray^ mask);
             /// <summary>
             /// computes mean value and standard deviation of all or selected array
             /// elements
@@ -3884,11 +3044,6 @@ namespace OpenCV
             /// values
             /// </summary>
             static void Normalize(OpenCV::Cv::_InputArray^ src, OpenCV::Cv::_OutputArray^ dst, double alpha, double beta, int norm_type, int dtype, OpenCV::Cv::_InputArray^ mask);
-            /// <summary>
-            /// finds global minimum and maximum array elements and returns their values
-            /// and their locations
-            /// </summary>
-            static void MinMaxLoc(OpenCV::Cv::_InputArray^ src, double* minVal, double* maxVal, OpenCV::Cv::Point^ minLoc, OpenCV::Cv::Point^ maxLoc, OpenCV::Cv::_InputArray^ mask);
             static void MinMaxIdx(OpenCV::Cv::_InputArray^ src, double* minVal, double* maxVal, int* minIdx, int* maxIdx, OpenCV::Cv::_InputArray^ mask);
             /// <summary>
             /// transforms 2D matrix to 1D row or column vector by taking sum, minimum,
@@ -4044,10 +3199,6 @@ namespace OpenCV
             /// </summary>
             static void magnitude(OpenCV::Cv::_InputArray^ x, OpenCV::Cv::_InputArray^ y, OpenCV::Cv::_OutputArray^ magnitude);
             /// <summary>
-            /// checks that each matrix element is within the specified range.
-            /// </summary>
-            static bool CheckRange(OpenCV::Cv::_InputArray^ a, bool quiet, OpenCV::Cv::Point^ pos, double minVal, double maxVal);
-            /// <summary>
             /// converts NaN's to the given number
             /// </summary>
             static void PatchNaNs(OpenCV::Cv::_OutputArray^ a, double val);
@@ -4078,17 +3229,9 @@ namespace OpenCV
             /// </summary>
             static void CompleteSymm(OpenCV::Cv::_OutputArray^ mtx, bool lowerToUpper);
             /// <summary>
-            /// initializes scaled identity matrix
-            /// </summary>
-            static void SetIdentity(OpenCV::Cv::_OutputArray^ mtx, OpenCV::Cv::Scalar^ s);
-            /// <summary>
             /// computes determinant of a square matrix
             /// </summary>
             static double Determinant(OpenCV::Cv::_InputArray^ mtx);
-            /// <summary>
-            /// computes trace of a matrix
-            /// </summary>
-            static OpenCV::Cv::Scalar^ Trace(OpenCV::Cv::_InputArray^ mtx);
             /// <summary>
             /// computes inverse or pseudo-inverse matrix
             /// </summary>
@@ -4201,59 +3344,6 @@ namespace OpenCV
             /// </summary>
             static void RandShuffle(OpenCV::Cv::_OutputArray^ dst, double iterFactor, OpenCV::Cv::RNG^ rng);
             static void RandShuffle_(OpenCV::Cv::_OutputArray^ dst, double iterFactor);
-            /// <summary>
-            /// draws the line segment (pt1, pt2) in the image
-            /// </summary>
-            static void Line(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// draws the rectangle outline or a solid rectangle with the opposite corners
-            /// pt1 and pt2 in the image
-            /// </summary>
-            static void Rectangle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// draws the rectangle outline or a solid rectangle covering rec in the image
-            /// </summary>
-            static void rectangle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Rect^ rec, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// draws the circle outline or a solid circle in the image
-            /// </summary>
-            static void Circle(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ center, int radius, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// draws an elliptic arc, ellipse sector or a rotated ellipse in the image
-            /// </summary>
-            static void Ellipse(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ center, OpenCV::Cv::Size^ axes, double angle, double startAngle, double endAngle, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// draws a rotated ellipse in the image
-            /// </summary>
-            static void ellipse(OpenCV::Cv::Mat^ img, OpenCV::Cv::RotatedRect^ box, OpenCV::Cv::Scalar^ color, int thickness, int lineType);
-            /// <summary>
-            /// draws a filled convex polygon in the image
-            /// </summary>
-            static void FillConvexPoly(OpenCV::Cv::Mat^ img, OpenCV::Cv::Point^ pts, int npts, OpenCV::Cv::Scalar^ color, int lineType, int shift);
-            static void fillConvexPoly(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ points, OpenCV::Cv::Scalar^ color, int lineType, int shift);
-            static void fillPoly(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ pts, OpenCV::Cv::Scalar^ color, int lineType, int shift, OpenCV::Cv::Point^ offset);
-            static void polylines(OpenCV::Cv::_OutputArray^ img, OpenCV::Cv::_InputArray^ pts, bool isClosed, OpenCV::Cv::Scalar^ color, int thickness, int lineType, int shift);
-            /// <summary>
-            /// clips the line segment by the rectangle Rect(0, 0, imgSize.width,
-            /// imgSize.height)
-            /// </summary>
-            static bool ClipLine(OpenCV::Cv::Size^ imgSize, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2);
-            /// <summary>
-            /// clips the line segment by the rectangle imgRect
-            /// </summary>
-            static bool clipLine(OpenCV::Cv::Rect^ imgRect, OpenCV::Cv::Point^ pt1, OpenCV::Cv::Point^ pt2);
-            /// <summary>
-            /// converts elliptic arc to a polygonal curve
-            /// </summary>
-            static void Ellipse2Poly(OpenCV::Cv::Point^ center, OpenCV::Cv::Size^ axes, int angle, int arcStart, int arcEnd, int delta, System::Collections::Generic::List<OpenCV::Cv::Point^>^ pts);
-            /// <summary>
-            /// renders text string in the image
-            /// </summary>
-            static void PutText(OpenCV::Cv::Mat^ img, System::String^ text, OpenCV::Cv::Point^ org, int fontFace, double fontScale, OpenCV::Cv::Scalar^ color, int thickness, int lineType, bool bottomLeftOrigin);
-            /// <summary>
-            /// returns bounding box of the text string
-            /// </summary>
-            static OpenCV::Cv::Size^ GetTextSize(System::String^ text, int fontFace, double fontScale, int thickness, int* baseLine);
             /// <summary>
             /// returns the function for converting pixels from one data type to another
             /// </summary>

@@ -117,26 +117,10 @@ void OpenCV::Cv::MatOp::Add(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ exp
     ((::cv::MatOp*)NativePtr)->add(arg0, arg1, arg2);
 }
 
-void OpenCV::Cv::MatOp::Add(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ res)
-{
-    auto &arg0 = *(::cv::MatExpr*)expr1->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg2 = *(::cv::MatExpr*)res->NativePtr;
-    ((::cv::MatOp*)NativePtr)->add(arg0, arg1, arg2);
-}
-
 void OpenCV::Cv::MatOp::Subtract(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ expr2, OpenCV::Cv::MatExpr^ res)
 {
     auto &arg0 = *(::cv::MatExpr*)expr1->NativePtr;
     auto &arg1 = *(::cv::MatExpr*)expr2->NativePtr;
-    auto &arg2 = *(::cv::MatExpr*)res->NativePtr;
-    ((::cv::MatOp*)NativePtr)->subtract(arg0, arg1, arg2);
-}
-
-void OpenCV::Cv::MatOp::Subtract(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ expr, OpenCV::Cv::MatExpr^ res)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::MatExpr*)expr->NativePtr;
     auto &arg2 = *(::cv::MatExpr*)res->NativePtr;
     ((::cv::MatOp*)NativePtr)->subtract(arg0, arg1, arg2);
 }
@@ -200,14 +184,6 @@ void OpenCV::Cv::MatOp::Invert(OpenCV::Cv::MatExpr^ expr, int method, OpenCV::Cv
     ((::cv::MatOp*)NativePtr)->invert(arg0, method, arg2);
 }
 
-OpenCV::Cv::Size^ OpenCV::Cv::MatOp::Size(OpenCV::Cv::MatExpr^ expr)
-{
-    auto &arg0 = *(::cv::MatExpr*)expr->NativePtr;
-    auto __ret = ((::cv::MatOp*)NativePtr)->size(arg0);
-    auto ____ret = new ::cv::Size(__ret);
-    return gcnew OpenCV::Cv::Size((::cv::Size*)____ret);
-}
-
 int OpenCV::Cv::MatOp::Type(OpenCV::Cv::MatExpr^ expr)
 {
     auto &arg0 = *(::cv::MatExpr*)expr->NativePtr;
@@ -262,16 +238,6 @@ OpenCV::Cv::MatExpr::!MatExpr()
 OpenCV::Cv::MatExpr::MatExpr()
 {
     NativePtr = new ::cv::MatExpr();
-}
-
-OpenCV::Cv::MatExpr::MatExpr(OpenCV::Cv::MatOp^ _op, int _flags, OpenCV::Cv::Mat^ _a, OpenCV::Cv::Mat^ _b, OpenCV::Cv::Mat^ _c, double _alpha, double _beta, OpenCV::Cv::Scalar^ _s)
-{
-    auto arg0 = (::cv::MatOp*)_op->NativePtr;
-    auto &arg2 = *(::cv::Mat*)_a->NativePtr;
-    auto &arg3 = *(::cv::Mat*)_b->NativePtr;
-    auto &arg4 = *(::cv::Mat*)_c->NativePtr;
-    auto &arg7 = *(::cv::Scalar*)_s->NativePtr;
-    NativePtr = new ::cv::MatExpr(arg0, _flags, arg2, arg3, arg4, _alpha, _beta, arg7);
 }
 
 OpenCV::Cv::MatExpr::MatExpr(OpenCV::Cv::Mat^ m)
@@ -354,13 +320,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::Mul(OpenCV::Cv::Mat^ m, double scale)
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
 }
 
-OpenCV::Cv::Size^ OpenCV::Cv::MatExpr::Size()
-{
-    auto __ret = ((::cv::MatExpr*)NativePtr)->size();
-    auto ____ret = new ::cv::Size(__ret);
-    return gcnew OpenCV::Cv::Size((::cv::Size*)____ret);
-}
-
 int OpenCV::Cv::MatExpr::Type()
 {
     auto __ret = ((::cv::MatExpr*)NativePtr)->type();
@@ -371,24 +330,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator+(OpenCV::Cv::MatExpr^ e, Open
 {
     auto &arg0 = *(::cv::MatExpr*)e->NativePtr;
     auto &arg1 = *(::cv::Mat*)m->NativePtr;
-    auto __ret = arg0 + arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator+(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::MatExpr*)e->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 + arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator+(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ e)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::MatExpr*)e->NativePtr;
     auto __ret = arg0 + arg1;
     auto ____ret = new ::cv::MatExpr(__ret);
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
@@ -407,24 +348,6 @@ OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator-(OpenCV::Cv::MatExpr^ e, Open
 {
     auto &arg0 = *(::cv::MatExpr*)e->NativePtr;
     auto &arg1 = *(::cv::Mat*)m->NativePtr;
-    auto __ret = arg0 - arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator-(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Scalar^ s)
-{
-    auto &arg0 = *(::cv::MatExpr*)e->NativePtr;
-    auto &arg1 = *(::cv::Scalar*)s->NativePtr;
-    auto __ret = arg0 - arg1;
-    auto ____ret = new ::cv::MatExpr(__ret);
-    return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
-}
-
-OpenCV::Cv::MatExpr^ OpenCV::Cv::MatExpr::operator-(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ e)
-{
-    auto &arg0 = *(::cv::Scalar*)s->NativePtr;
-    auto &arg1 = *(::cv::MatExpr*)e->NativePtr;
     auto __ret = arg0 - arg1;
     auto ____ret = new ::cv::MatExpr(__ret);
     return gcnew OpenCV::Cv::MatExpr((::cv::MatExpr*)____ret);
@@ -615,16 +538,6 @@ double OpenCV::Cv::MatExpr::Beta::get()
 void OpenCV::Cv::MatExpr::Beta::set(double value)
 {
     ((::cv::MatExpr*)NativePtr)->beta = value;
-}
-
-OpenCV::Cv::Scalar^ OpenCV::Cv::MatExpr::S::get()
-{
-    return (&((::cv::MatExpr*)NativePtr)->s == nullptr) ? nullptr : gcnew OpenCV::Cv::Scalar((::cv::Scalar*)&((::cv::MatExpr*)NativePtr)->s);
-}
-
-void OpenCV::Cv::MatExpr::S::set(OpenCV::Cv::Scalar^ value)
-{
-    ((::cv::MatExpr*)NativePtr)->s = *(::cv::Scalar*)value->NativePtr;
 }
 
 OpenCV::Cv::MatExpr^ OpenCV::Cv::mat::Min(OpenCV::Cv::Mat^ a, OpenCV::Cv::Mat^ b)

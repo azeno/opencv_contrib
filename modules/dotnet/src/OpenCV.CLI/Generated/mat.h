@@ -74,11 +74,7 @@ namespace OpenCV
 
             virtual void Add(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ expr2, OpenCV::Cv::MatExpr^ res);
 
-            virtual void Add(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ res);
-
             virtual void Subtract(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ expr2, OpenCV::Cv::MatExpr^ res);
-
-            virtual void Subtract(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ expr, OpenCV::Cv::MatExpr^ res);
 
             virtual void Multiply(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ expr2, OpenCV::Cv::MatExpr^ res, double scale);
 
@@ -95,8 +91,6 @@ namespace OpenCV
             virtual void Matmul(OpenCV::Cv::MatExpr^ expr1, OpenCV::Cv::MatExpr^ expr2, OpenCV::Cv::MatExpr^ res);
 
             virtual void Invert(OpenCV::Cv::MatExpr^ expr, int method, OpenCV::Cv::MatExpr^ res);
-
-            virtual OpenCV::Cv::Size^ Size(OpenCV::Cv::MatExpr^ expr);
 
             virtual int Type(OpenCV::Cv::MatExpr^ expr);
 
@@ -119,8 +113,6 @@ namespace OpenCV
             MatExpr(::cv::MatExpr* native);
             MatExpr(System::IntPtr native);
             MatExpr();
-
-            MatExpr(OpenCV::Cv::MatOp^ _op, int _flags, OpenCV::Cv::Mat^ _a, OpenCV::Cv::Mat^ _b, OpenCV::Cv::Mat^ _c, double _alpha, double _beta, OpenCV::Cv::Scalar^ _s);
 
             MatExpr(OpenCV::Cv::Mat^ m);
 
@@ -170,12 +162,6 @@ namespace OpenCV
                 void set(double);
             }
 
-            property OpenCV::Cv::Scalar^ S
-            {
-                OpenCV::Cv::Scalar^ get();
-                void set(OpenCV::Cv::Scalar^);
-            }
-
             static operator OpenCV::Cv::Mat^(OpenCV::Cv::MatExpr^ __op);
 
             OpenCV::Cv::MatExpr^ Row(int y);
@@ -196,8 +182,6 @@ namespace OpenCV
 
             OpenCV::Cv::MatExpr^ Mul(OpenCV::Cv::Mat^ m, double scale);
 
-            OpenCV::Cv::Size^ Size();
-
             int Type();
 
             static operator OpenCV::Cv::_InputArray^(OpenCV::Cv::MatExpr^ __op);
@@ -208,17 +192,9 @@ namespace OpenCV
 
             static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Mat^ m);
 
-            static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ e);
-
             static OpenCV::Cv::MatExpr^ operator+(OpenCV::Cv::MatExpr^ e1, OpenCV::Cv::MatExpr^ e2);
 
             static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Mat^ m);
-
-            static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::MatExpr^ e, OpenCV::Cv::Scalar^ s);
-
-            static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::Scalar^ s, OpenCV::Cv::MatExpr^ e);
 
             static OpenCV::Cv::MatExpr^ operator-(OpenCV::Cv::MatExpr^ e1, OpenCV::Cv::MatExpr^ e2);
 
